@@ -11,4 +11,5 @@ spring:
     username: account_user
     password: pass
     url: jdbc:sqlserver://localhost:1433;databaseName=Accounts
-allow-get-accounts: false
+accounts:
+  allow-get-accounts: false
