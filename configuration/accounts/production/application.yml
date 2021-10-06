@@ -1,2 +1,20 @@
 server:
   port: 7777
+spring:
+  jpa:
+    hibernate:
+      ddl-auto:
+        update
+      dialect:
+        org.hibernate.dialect.SQLServerDialect
+    database:
+      sql_server
+  datasource:
+    driver-class-name:
+      com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username:
+      account_user
+    password:
+      pass
+    url:
+      jdbc:sqlserver://localhost:1433;databaseName=Accounts
