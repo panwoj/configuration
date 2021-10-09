@@ -2,3 +2,15 @@ eureka-client:
   fetchRegistry: true
   serviceUrl:
     defaultZone=http://localhost:8761/eureka/:
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 5
+      slidingWindowType: count_based
+      failureRateThreshold: 40
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 60000
+      permittedNumberOfCallsInHalfOpenState: 3
+      minimumNumberOfCalls: 5
+      recordExceptions:
+        - feign.FeignException
